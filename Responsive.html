@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 900px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Chania</h1>
+</div>
+
+<div class="row">
+  <div class="col-3 col-s-3 menu">
+    <ul>
+      <li>The Flight</li>
+      <li>The City</li>
+      <li>The Island</li>
+      <li>The Food</li>
+    </ul>
+  </div>
+
+  <div class="col-6 col-s-9">
+    <h1>The City</h1>
+    <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+  </div>
+
+  <div class="col-3 col-s-12">
+    <div class="aside">
+      <h2>What?</h2>
+      <p>Chania is a city on the island of Crete.</p>
+      <h2>Where?</h2>
+      <p>Crete is a Greek island in the Mediterranean Sea.</p>
+      <h2>How?</h2>
+      <p>You can reach Chania airport from all over Europe.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Resize the browser window to see how the content respond to the resizing.</p>
+</div>
+
+</body>
+</html>
+
+<!-- <h1 style="margin-left: 450px; margin-bottom: 50px;">Contact Form# 01</h1>
+        <div class="div1" style="color:white; float: left; margin-left: 300px;    background-color: white; box-shadow: 10px 10px 5px 12px lightgray">
+
+            <div class="card">
+
+
+
+                <h2 style="color:black; margin-left: 20px;"> Get in touch</h2>
+
+                <input style="margin-left: 20px;" type="text" placeholder=" Name"> <input style="margin-left: 10px; margin-right: 10px;" type="text" placeholder="Email">
+
+                <br>
+                <br>
+
+                <input style="margin-left: 20px;" type="text" placeholder="Subject">
+                <br>
+                <br>
+                <textarea style="margin-left: 20px;" name="message" id="message" cols="30" rows="10" placeholder="message"></textarea>
+                <br>
+                <br>
+                <button class="btn btn-primary" style="background-color:dodgerblue ; margin-left: 20px;  " onclick="location.href='tut1.html'">Send Message</button>
+            </div>
+        </div>
+
+
+
+        <div class="div2"
+            style="color: white; box-shadow: 10px 10px 5px 12px lightgray; background-color: dodgerblue; width: 30%; float: left; margin-right: 100px ; height: 500px; margin-bottom: 20px;">
+
+
+            <h2 style="margin-left: 40px; margin-top: 40px;">Contact</h2>
+            <p style="margin-left: 40px;"><i class="fa fa-map-marker"></i> Address: 198 West 21th Street,<br>
+                Suite 721 New York NY 10016</p>
+            <br>
+            <br>
+            <p style="margin-left: 40px; "> <i class="fa fa-phone"></i>Phone: + 1235 2355 98</p>
+            <br>
+            <br>
+            <p style="margin-left: 40px;"><i class="fa fa-envelope"></i> Email: info@yoursite.com</p>
+            <br>
+            <br>
+            <p style="margin-left: 40px;"> <i class="fa fa-globe"></i>Website yoursite.com</p>
+
+
+
+        </div>
+
+
+    </div> -->

@@ -1,0 +1,145 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<body>
+
+<script>
+const numbersOne = [1, 2, 3];
+const numbersTwo = [4, 5, 6];
+const numbersCombined = [...numbersOne, ...numbersTwo];
+
+document.write(numbersCombined);
+</script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Css/bootstrap.min.css">
+    <script src="/Js/jquery.min.js"></script>
+    <script src="/Js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Registration Form</title>
+    <style>
+        .compulsory {
+            color: red;
+        }
+    </style>
+    <script>
+        var studentList = [];
+        function doSave() {
+            var txtFirstName = document.getElementById("txtFirstName");
+            var txtLastName = document.getElementById("txtLastName");
+            var txtAddress = document.getElementById("txtAddress");
+            var txtEmail = document.getElementById("txtEmail");
+            var txtContact = document.getElementById("txtContact");
+            var txtBirthDate = document.getElementById("txtBirthDate");
+            console.log(txtFirstName.value);
+            console.log(txtLastName.value);
+
+            var obj = { "FirstName": txtFirstName.value, "LastName": txtLastName.value, "Address": txtAddress.value, "Email": txtEmail.value, "Contact": txtContact.value, "BirthDate": txtBirthDate.value };
+            studentList.push(obj);
+
+            loadData();
+            // document.getElementById("registrationfrm").reset();
+        }
+
+       
+        function loadData() {
+            var str = "";
+            for (let i = 0; i < studentList.length; i++) {
+                var obj = studentList[i];
+                var FullName = obj.FirstName + " " + obj.LastName;
+                str = str + "<tr><td>" + FullName + "</td><td>" + obj.Address + "</td><td>" + obj.Email + "</td><td>" + obj.Contact + "</td><td>" + obj.BirthDate + "</td><td class=''><button class='btn-xs btn-info btn-operation col-6'><i class='fa fa-edit'></i></button><button class='col-6 btn-xs btn-danger btn-operation' clickon='DeleteItem(" + i + ")'><i class='fa fa-trash' ></i></button></td></tr>";
+
+            }
+            document.getElementById("tblBody").innerHTML = str;
+
+        }
+
+        function DeleteItem(index) {
+            var d = confirm("Do You want to delete?")
+            if (d == true) {
+                studentList.splice(index, 1)
+                loadData();
+            }
+
+        }
+        function doClear() {
+            txtFirstName.style = "";
+            txtLastName.style = "";
+            txtAddress.style = "";
+            txtEmail.style = "";
+            txtContact.style = "";
+            txtBirthDate.style = "";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-md-4 bg-info">
+                <form id="registrationfrm" class="row" action="" method="post">
+                    <div class="col-md-6">
+                        <label for="" class="form-label">First Name<span class="compulsory">*</span></label>
+                        <input type="text" name="" id="txtFirstName" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="" class="form-label">Last Name<span class="compulsory">*</span></label>
+                        <input type="text" name="" id="txtLastName" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="" class="form-label">Address<span class="compulsory">*</span></label>
+                        <textarea class="form-control" id="txtAddress"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <label for="" class="form-label">Email Address<span class="compulsory">*</span></label>
+                        <input type="email" name="" id="txtEmail" class="form-control" placeholder="example@email.com">
+                    </div>
+                    <div class="col-12">
+                        <label for="" class="form-label">Contact No<span class="compulsory">*</span></label>
+                        <input type="number" name="" id="txtContact" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="" class="form-label">Date of Birth<span class="compulsory">*</span></label>
+                        <input type="date" name="" id="txtBirthDate" class="form-control">
+                    </div>
+                    <div class="text-center">
+                        <button type="reset" class="btn btn-outline-dark align-items-center" onclick="doClear()">Clear
+                            All</button>
+                        <button type="button" class="btn btn-outline-dark align-items-center"
+                            onclick="doSave()">Save</button>
+                    </div>
+                </form>
+            </div>
+            <div class="container-fluid col-md-8">
+                <div class=" bg-light w-100">
+                    <table class="table table-bordered border-primary">
+                        <thead class="table-dark text-center">
+                            <th>Full Name</th>
+                            <th>Address</th>
+                            <th>Email Address</th>
+                            <th>Contact No</th>
+                            <th>Birth Date</th>
+                            <th>Operation</th>
+                        </thead>
+                        <tbody id="tblBody">
+<!-- <button  onclick="DeleteItem(1)">Delete</button> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
